@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel Booking Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+      }
+
+      #bookingForm {
+        max-width: 600px;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h2,
+      h3 {
+        color: #333;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="date"],
+      select,
+      input[type="number"] {
+        width: calc(100% - 12px);
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-right: 10px;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      .error {
+        color: red;
+        font-size: 0.8em;
+        margin-top: -10px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Hotel Booking Form</h2>
+
+    <form id="bookingForm">
+      <h3>Reservation Details</h3>
+      <label for="fullName">Full Name:</label>
+      <input type="text" id="fullName" name="fullName" />
+      <span id="fullNameError" class="error"></span>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" />
+      <span id="emailError" class="error"></span>
+
+      <label for="checkInDate">Check-in Date:</label>
+      <input type="date" id="checkInDate" name="checkInDate" />
+      <span id="checkInDateError" class="error"></span>
+
+      <label for="checkOutDate">Check-out Date:</label>
+      <input type="date" id="checkOutDate" name="checkOutDate" />
+      <span id="checkOutDateError" class="error"></span>
+
+      <h3>Booking Details</h3>
+      <label for="roomType">Room Type:</label>
+      <select id="roomType" name="roomType">
+        <option value="standard">Standard</option>
+        <option value="deluxe">Deluxe</option>
+        <option value="suite">Suite</option>
+      </select>
+      <span id="roomTypeError" class="error"></span>
+
+      <label for="numOfGuests">Number of Guests:</label>
+      <input type="number" id="numOfGuests" name="numOfGuests" />
+      <span id="numOfGuestsError" class="error"></span>
+
+      <h3>Sporting Details</h3>
+      <label for="sport">Sport:</label>
+      <input type="text" id="sport" name="sport" />
+      <span id="sportError" class="error"></span>
+
+      <label for="equipment">Equipment Needed:</label>
+      <input type="text" id="equipment" name="equipment" />
+      <span id="equipmentError" class="error"></span>
+
+      <button type="button" onclick="validateBooking()">Submit</button>
+      <button type="button" onclick="cancelBooking()">Cancel</button>
+    </form>
+
+    <script>
+      function validateBooking() {
+        var fullName = document.getElementById("fullName").value;
+        var email = document.getElementById("email").value;
+        var checkInDate = document.getElementById("checkInDate").value;
+        var checkOutDate = document.getElementById("checkOutDate").value;
+        var roomType = document.getElementById("roomType").value;
+        var numOfGuests = document.getElementById("numOfGuests").value;
+        var sport = document.getElementById("sport").value;
+        var equipment = document.getElementById("equipment").value;
+
+        var fullNameError = document.getElementById("fullNameError");
+        var emailError = document.getElementById("emailError");
+        var checkInDateError = document.getElementById("checkInDateError");
+        var checkOutDateError = document.getElementById("checkOutDateError");
+        var roomTypeError = document.getElementById("roomTypeError");
+        var numOfGuestsError = document.getElementById("numOfGuestsError");
+        var sportError = document.getElementById("sportError");
+        var equipmentError = document.getElementById("equipmentError");
+
+        fullNameError.textContent = "";
+        emailError.textContent = "";
+        checkInDateError.textContent = "";
+        checkOutDateError.textContent = "";
+        roomTypeError.textContent = "";
+        numOfGuestsError.textContent = "";
+        sportError.textContent = "";
+        equipmentError.textContent = "";
+
+        var isValid = true;
+
+        if (fullName === "") {
+          fullNameError.textContent = "Please enter your full name";
+          isValid = false;
+        }
+
+        if (email === "") {
+          emailError.textContent = "Please enter your email";
+          isValid = false;
+        }
+
+        if (checkInDate === "") {
+          checkInDateError.textContent = "Please select check-in date";
+          isValid = false;
+        }
+
+        if (checkOutDate === "") {
+          checkOutDateError.textContent = "Please select check-out date";
+          isValid = false;
+        }
+
+        if (roomType === "") {
+          roomTypeError.textContent = "Please select room type";
+          isValid = false;
+        }
+
+        if (numOfGuests === "" || numOfGuests <= 0) {
+          numOfGuestsError.textContent = "Please enter valid number of guests";
+          isValid = false;
+        }
+
+        if (sport === "") {
+          sportError.textContent = "Please enter sport";
+          isValid = false;
+        }
+
+        if (equipment === "") {
+          equipmentError.textContent = "Please enter equipment needed";
+          isValid = false;
+        }
+
+        if (isValid) {
+          submitBooking();
+        }
+      }
+
+      function submitBooking() {
+        // Fetch form data
+        var formData = new FormData(document.getElementById("bookingForm"));
+
+        // Convert formData to JSON
+        var jsonObject = {};
+        formData.forEach(function (value, key) {
+          jsonObject[key] = value;
+        });
+        var jsonData = JSON.stringify(jsonObject);
+
+        // Display submitted data
+        alert("Booking submitted!\n" + jsonData);
+      }
+
+      function cancelBooking() {
+        // Clear form fields
+        document.getElementById("bookingForm").reset();
+        alert("Booking canceled!");
+      }
+    </script>
+  </body>
+</html>
