@@ -1,0 +1,198 @@
+ body{
+	 margin: 0;
+	 padding: 0;
+	 font-family: ;
+	 font-size: 16px;
+	 background-size: cover;
+	 background-position: center;
+	 background-repeat: no-repeat;
+	 height:120vh;
+	 background-attachment:fixed;
+	 overflow-x: hidden;
+
+	 
+ }
+ .nav{
+	 background: rgb(255,255,255);
+	 color: #ffffff;
+	 padding-left:15px;
+	 padding-right:20px;
+	
+	 margin: 0px;
+	 z-index: 1;
+	 position:fixed;
+	 top: 0;
+	 width: 100%;
+	 
+	
+}
+ .menu{
+	 line-height: 20px;
+	 font-weight: 700;
+	 text-transform: uppercase;
+	 margin: 0px;
+	 padding: 10px;
+	
+	
+	
+	 
+ }
+ .nav ul{
+	 list-style-type: none;
+	 margin: 0;
+	 padding: 0;
+	
+ }
+ .nav .menu .menu_item{
+	 display: inline-block;
+     position: relative;
+	 margin-left: -20px;
+	 margin-right: -20px;
+	 padding: 0px;
+	 z-index: 1;
+	 float: right;
+	
+	
+ }
+.nav .menu .menu_item a{  
+     padding: 0px 0px;
+	 margin-left: 0px;
+	 margin-right: 0px;
+	 cursor: pointer;
+     text-decoration: none;
+	 display: block;
+	 color: #00000;
+
+}	 
+.submenu{
+	text-transform:none;
+	display: none;
+	position: absolute;
+	width: 170px;
+	background-color: rgba(255,255,255);
+}
+.menu_item:hover .submenu{
+	display: block;
+}
+.submenu_item{
+	border-left:4px solid transparent;
+}
+.submenu_item:hover{
+	background-color: rgba(255,255,255,0.6);
+	border-left: 4px solid rgba(135,206,235,0.8);
+}
+.welcome{
+	position: absolute;
+	top: 45%;
+	border: 3px solid #DEDEDE;
+	background-color: #DEDEDE;
+}
+.about{
+	position: fixed;
+	height: 100vh;
+	background-color: rgba(0,0,0,0.7);
+	padding: 5px;
+	text-decoration: none;
+	top:16%;
+}
+.about a{
+	text-decoration: none;
+	color: white;
+	padding: 6px 65px;
+}
+.about a:hover{
+	background-color: #fff;
+	color: #000;
+	
+	;
+}
+.oatley{
+	top:14%;
+	left:20%;
+	position: relative;
+	background-color: rgba(255,255,255,0.9);
+	width:90vh;
+	padding:5px;
+	padding-left:25px;
+	margin-top: 16px;
+	margin-bottom: 16px;
+	
+}
+.stay{
+	position: fixed;
+	height: 90vh;
+	background-color: rgba(0,0,0,0.7);
+	padding: 5px;
+	text-decoration: none;
+	top:16%;
+	
+}
+.stay a{
+	text-decoration: none;
+	color: white;
+	padding: 6px 65px;
+}
+.stay a:hover{
+	background-color: #fff;
+	color: #000;
+	;
+}
+.luxury{
+		top:14%;
+	left:21%;
+	position: relative;
+	background-color: rgba(255,255,255,0.9);
+	width:90vh;
+	padding:10px;
+	padding-left:25px;
+	margin-top: 16px;
+	margin-bottom: 16px;
+	
+}
+.luxury a{
+	text-decoration: none;
+	background-color: #0093FF;
+	color: white;
+	padding: 5px 20px
+}
+ .luxury a:hover{
+	 background-color: white;
+	 color:#0093FF;
+ }	 
+.dining{ top:14%;
+	left:21%;
+	position: relative;
+	background-color: rgba(255,255,255,0.9);
+	width:90vh;
+	padding:5px;
+	padding-left:25px;
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+.spa{
+	top:14%;
+	left:20%;
+	position: relative;
+	padding-left:25px;
+	background-color: rgba(255,255,255,0.9);
+	width:100vh;
+	padding:5px;
+	padding-left: 25px;
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+.experiences{
+	top:14%;
+	left:20%;
+	position: relative;
+	background-color: rgba(255,255,255,0.9);
+	width:90vh;
+	padding:5px;
+	padding-left:25px;
+	margin-top: 16px;
+	margin-bottom: 16px;
+	
+	
+}
+	
+	
