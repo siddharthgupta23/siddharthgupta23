@@ -123,9 +123,9 @@ Passionate about creating seamless user experiences, integrating AI-driven featu
 
 ## 📊 GitHub Stats  
 
-![Siddharth's GitHub stats](https://github-readme-stats.vercel.app/api?username=siddharthgupta23&show_icons=true&theme=radical)
+![Siddharth's GitHub stats](https://github-readme-stats-two-sandy-24.vercel.app/api?username=siddharthgupta23&show_icons=true&theme=radical)
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=siddharthgupta23&layout=compact&theme=radical)
+![Top Languages](https://github-readme-stats-two-sandy-24.vercel.app/api/top-langs/?username=siddharthgupta23&layout=compact&theme=radical)
 
 ---
 
